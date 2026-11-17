@@ -1936,6 +1936,7 @@ zabbix_export:
                       value: VPN01
                 - type: problems
                   name: 'Firewall and VPN alerts'
+                  'y': '12'
                   width: '72'
                   height: '7'
                   fields:
@@ -1944,7 +1945,7 @@ zabbix_export:
                       value: '3'
                 - type: item
                   name: 'Live captive portal users (count)'
-                  'y': '7'
+                  'y': '19'
                   width: '24'
                   height: '4'
                   fields:
