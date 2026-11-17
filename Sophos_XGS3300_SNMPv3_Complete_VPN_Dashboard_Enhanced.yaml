@@ -1895,8 +1895,8 @@ zabbix_export:
               widgets:
                 - type: honeycomb
                   name: 'VPN tunnel status - live'
-                  x: '0'
-                  'y': '0'
+                  x: 0
+                  y: 0
                   width: '72'
                   height: '12'
                   fields:
@@ -1938,8 +1938,8 @@ zabbix_export:
                       value: VPN01
                 - type: problems
                   name: 'Firewall and VPN alerts'
-                  x: '0'
-                  'y': '12'
+                  x: 0
+                  y: 12
                   width: '72'
                   height: '7'
                   fields:
@@ -1948,8 +1948,8 @@ zabbix_export:
                       value: '3'
                 - type: item
                   name: 'Live captive portal users (count)'
-                  x: '0'
-                  'y': '19'
+                  x: 0
+                  y: 19
                   width: '24'
                   height: '4'
                   fields:
