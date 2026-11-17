@@ -1893,53 +1893,8 @@ zabbix_export:
                       value: P8LIVE
             - name: 'VPN & Users'
               widgets:
-                - type: honeycomb
-                  name: 'VPN tunnel status - live'
-                  x: 0
-                  y: 0
-                  width: '72'
-                  height: '12'
-                  fields:
-                    - type: STRING
-                      name: items.0
-                      value: 'VPN *: status'
-                    - type: STRING
-                      name: primary_label
-                      value: '{ITEM.NAME}'
-                    - type: INTEGER
-                      name: primary_label_bold
-                      value: '1'
-                    - type: STRING
-                      name: bg_color
-                      value: '808080'
-                    - type: INTEGER
-                      name: interpolation
-                      value: '0'
-                    - type: STRING
-                      name: thresholds.0.color
-                      value: 'FF465C'
-                    - type: STRING
-                      name: thresholds.0.threshold
-                      value: '0'
-                    - type: STRING
-                      name: thresholds.1.color
-                      value: '0EC9AC'
-                    - type: STRING
-                      name: thresholds.1.threshold
-                      value: '1'
-                    - type: STRING
-                      name: thresholds.2.color
-                      value: 'FFB020'
-                    - type: STRING
-                      name: thresholds.2.threshold
-                      value: '2'
-                    - type: STRING
-                      name: reference
-                      value: VPN01
                 - type: problems
                   name: 'Firewall and VPN alerts'
-                  x: 0
-                  y: 12
                   width: '72'
                   height: '7'
                   fields:
@@ -1948,8 +1903,7 @@ zabbix_export:
                       value: '3'
                 - type: item
                   name: 'Live captive portal users (count)'
-                  x: 0
-                  y: 19
+                  'y': '7'
                   width: '24'
                   height: '4'
                   fields:
