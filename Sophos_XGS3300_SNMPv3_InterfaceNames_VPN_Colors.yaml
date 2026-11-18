@@ -96,7 +96,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 1687fcd3cd2446fd94b4439c119c4103
-          name: 'F1_Port5 — Fiber TCI1: IP address'
+          name: 'F1_Port5: IP address'
           type: DEPENDENT
           key: sophos.port5.ip
           history: 7d
@@ -115,7 +115,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 6b68d47c084440b29703963df5ebb94d
-          name: 'RadioTCI1_Port6 — Radio TCI1: IP address'
+          name: 'RadioTCI1_Port6: IP address'
           type: DEPENDENT
           key: sophos.port6.ip
           history: 7d
@@ -134,7 +134,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: cefbcb35ff274a639b4460a5f6a9b5f2
-          name: 'RadioTCI2_Port7 — PPPoE: IP address'
+          name: 'RadioTCI2_Port7: IP address'
           type: DEPENDENT
           key: sophos.port7.ip
           history: 7d
@@ -306,7 +306,11 @@ zabbix_export:
           key: sophos.port1.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: 69a202b5f6884b75b591257f9500bf37
           name: 'Port1: operational status'
           type: SNMP_AGENT
@@ -382,7 +386,11 @@ zabbix_export:
           key: sophos.port2.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: 042c2df2950e476d8956b0d1971a6d30
           name: 'SIP-TRunk: operational status'
           type: SNMP_AGENT
@@ -458,7 +466,11 @@ zabbix_export:
           key: sophos.port3.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: e878cd15dec644ebade711b35cdc5bf9
           name: 'Radio-Shanet1-Port3: operational status'
           type: SNMP_AGENT
@@ -534,7 +546,11 @@ zabbix_export:
           key: sophos.port4.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: 2ed23fd7058b4b5b9fa97d29b2fb5e62
           name: 'Radio-Shanet2-Port4: operational status'
           type: SNMP_AGENT
@@ -564,7 +580,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 16. Sophos API identifies this as F1_Port5; WAN gateway Fiber_TCI1.'
         - uuid: 816dde04898e48f3bc713b4ff115feab
-          name: 'F1_Port5 Fiber TCI1: inbound traffic'
+          name: 'F1_Port5: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.16
           key: sophos.port5.in
@@ -584,7 +600,7 @@ zabbix_export:
           history: 7d
           units: errors
         - uuid: 850078caa41148ca9d476ec4a14a079b
-          name: 'F1_Port5 Fiber TCI1: outbound traffic'
+          name: 'F1_Port5: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.16
           key: sophos.port5.out
@@ -610,7 +626,11 @@ zabbix_export:
           key: sophos.port5.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: db4e58aaf802458588013a251d680d45
           name: 'F1_Port5: operational status'
           type: SNMP_AGENT
@@ -640,7 +660,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 17. Sophos API identifies this as RadioTCI1_Port6.'
         - uuid: 4e0c6056364e40168033529a737b3da3
-          name: 'RadioTCI1_Port6 Radio TCI1: inbound traffic'
+          name: 'RadioTCI1_Port6: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.17
           key: sophos.port6.in
@@ -660,7 +680,7 @@ zabbix_export:
           history: 7d
           units: errors
         - uuid: 948707bf725546818c528521de62b286
-          name: 'RadioTCI1_Port6 Radio TCI1: outbound traffic'
+          name: 'RadioTCI1_Port6: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.17
           key: sophos.port6.out
@@ -686,7 +706,11 @@ zabbix_export:
           key: sophos.port6.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: 2278721d3aa541978eb977fe64e03668
           name: 'RadioTCI1_Port6: operational status'
           type: SNMP_AGENT
@@ -762,7 +786,11 @@ zabbix_export:
           key: sophos.port7.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: d14c0722d9a74d1fa68ce78cc49aec60
           name: 'RadioTCI2_Port7: operational status'
           type: SNMP_AGENT
@@ -838,7 +866,11 @@ zabbix_export:
           key: sophos.port8.speed
           history: 7d
           value_type: UNSIGNED
-          units: Mbps
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+          units: bps
         - uuid: 54acfb0486704b86b98c2bebd26b1d96
           name: 'Mikrotik: operational status'
           type: SNMP_AGENT
@@ -1024,7 +1056,7 @@ zabbix_export:
                       name: reference
                       value: P3T
                 - type: graph
-                  name: 'F1_Port5 Fiber TCI1 traffic'
+                  name: 'F1_Port5 traffic'
                   'y': '17'
                   width: '36'
                   height: '6'
@@ -1033,12 +1065,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'F1_Port5 Fiber TCI1 traffic'
+                        name: 'F1_Port5 traffic'
                     - type: STRING
                       name: reference
                       value: P5T
                 - type: graph
-                  name: 'RadioTCI2_Port7 Radio TCI2 traffic'
+                  name: 'RadioTCI2_Port7 traffic'
                   'y': '23'
                   width: '36'
                   height: '6'
@@ -1047,7 +1079,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'RadioTCI2_Port7 Radio TCI2 traffic'
+                        name: 'RadioTCI2_Port7 traffic'
                     - type: STRING
                       name: reference
                       value: P7T
@@ -1096,7 +1128,7 @@ zabbix_export:
                       name: reference
                       value: P4T
                 - type: graph
-                  name: 'RadioTCI1_Port6 Radio TCI1 traffic'
+                  name: 'RadioTCI1_Port6 traffic'
                   x: '36'
                   'y': '17'
                   width: '36'
@@ -1106,12 +1138,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'RadioTCI1_Port6 Radio TCI1 traffic'
+                        name: 'RadioTCI1_Port6 traffic'
                     - type: STRING
                       name: reference
                       value: P6T
                 - type: graph
-                  name: 'Mikrotik Mikrotik traffic'
+                  name: 'Mikrotik traffic'
                   x: '36'
                   'y': '23'
                   width: '36'
@@ -1121,7 +1153,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Mikrotik Mikrotik traffic'
+                        name: 'Mikrotik traffic'
                     - type: STRING
                       name: reference
                       value: P8T
@@ -1157,7 +1189,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'SIP-TRunk — Interface'
                   'y': '5'
@@ -1166,7 +1198,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port2 — Interface'
+                      value: 'SIP-TRunk — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1189,7 +1221,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Radio-Shanet1-Port3 — Interface'
                   'y': '10'
@@ -1198,7 +1230,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port3 — Interface'
+                      value: 'Radio-Shanet1-Port3 — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1221,7 +1253,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Radio-Shanet2-Port4 — Interface'
                   'y': '15'
@@ -1230,7 +1262,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port4 — Interface'
+                      value: 'Radio-Shanet2-Port4 — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1253,7 +1285,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'F1_Port5'
                   'y': '20'
@@ -1262,7 +1294,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'WAN1 — Fiber TCI1 (F1_Port5)'
+                      value: 'F1_Port5 — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1285,7 +1317,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'RadioTCI1_Port6'
                   'y': '25'
@@ -1294,7 +1326,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'WAN2 — Radio TCI1 (RadioTCI1_Port6)'
+                      value: 'RadioTCI1_Port6 — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1317,7 +1349,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'RadioTCI2_Port7'
                   'y': '30'
@@ -1326,7 +1358,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'WAN3 — Radio TCI2 (RadioTCI2_Port7)'
+                      value: 'RadioTCI2_Port7 — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1349,7 +1381,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Mikrotik'
                   'y': '35'
@@ -1358,7 +1390,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'WAN4 — Mikrotik'
+                      value: 'Mikrotik — Interface'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1381,7 +1413,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
 
 
 
@@ -1421,7 +1453,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'SIP-TRunk — IP address'
                   x: '10'
@@ -1431,7 +1463,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port2 IP'
+                      value: 'SIP-TRunk IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1454,7 +1486,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Radio-Shanet1-Port3 — IP address'
                   x: '10'
@@ -1464,7 +1496,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port3 IP'
+                      value: 'Radio-Shanet1-Port3 IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1487,7 +1519,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Radio-Shanet2-Port4 — IP address'
                   x: '10'
@@ -1497,7 +1529,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port4 IP'
+                      value: 'Radio-Shanet2-Port4 IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1520,7 +1552,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'F1_Port5 — IP address'
                   x: '10'
@@ -1530,7 +1562,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port5 IP'
+                      value: 'F1_Port5 IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1553,7 +1585,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'RadioTCI1_Port6 — IP address'
                   x: '10'
@@ -1563,7 +1595,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port6 IP'
+                      value: 'RadioTCI1_Port6 IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1586,7 +1618,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'RadioTCI2_Port7 — IP address'
                   x: '10'
@@ -1596,7 +1628,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port7 IP'
+                      value: 'RadioTCI2_Port7 IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1619,7 +1651,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Mikrotik — IP address'
                   x: '10'
@@ -1629,7 +1661,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'Port8 IP'
+                      value: 'Mikrotik IP'
                     - type: INTEGER
                       name: desc_size
                       value: '7'
@@ -1652,25 +1684,39 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
-                - type: honeycomb
-                  name: 'Port link status — Green UP / Red DOWN'
+                      value: '12'
+                - type: item
+                  name: 'Port1 — Link status'
                   x: '20'
                   width: '10'
-                  height: '40'
+                  height: '5'
                   fields:
                     - type: STRING
-                      name: items.0
-                      value: 'Port*: operational status'
+                      name: description
+                      value: 'Port1 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port1.status
                     - type: INTEGER
                       name: show.0
                       value: '1'
                     - type: INTEGER
                       name: show.1
                       value: '2'
-                    - type: STRING
-                      name: primary_label
-                      value: '{ITEM.NAME}'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
                     - type: STRING
                       name: bg_color
                       value: '777777'
@@ -1686,12 +1732,342 @@ zabbix_export:
                     - type: STRING
                       name: thresholds.1.threshold
                       value: '2'
-                    - type: INTEGER
-                      name: interpolation
-                      value: '0'
+                - type: item
+                  name: 'SIP-TRunk — Link status'
+                  x: '20'
+                  'y': '5'
+                  width: '10'
+                  height: '5'
+                  fields:
                     - type: STRING
-                      name: reference
-                      value: PORTST
+                      name: description
+                      value: 'SIP-TRunk — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port2.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'Radio-Shanet1-Port3 — Link status'
+                  x: '20'
+                  'y': '10'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'Radio-Shanet1-Port3 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port3.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'Radio-Shanet2-Port4 — Link status'
+                  x: '20'
+                  'y': '15'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'Radio-Shanet2-Port4 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port4.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'F1_Port5 — Link status'
+                  x: '20'
+                  'y': '20'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'F1_Port5 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port5.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'RadioTCI1_Port6 — Link status'
+                  x: '20'
+                  'y': '25'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'RadioTCI1_Port6 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port6.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'RadioTCI2_Port7 — Link status'
+                  x: '20'
+                  'y': '30'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'RadioTCI2_Port7 — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port7.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
+                - type: item
+                  name: 'Mikrotik — Link status'
+                  x: '20'
+                  'y': '35'
+                  width: '10'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'Mikrotik — Link status'
+                    - type: INTEGER
+                      name: desc_size
+                      value: '7'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.port8.status
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: time_size
+                      value: '1'
+                    - type: INTEGER
+                      name: value_bold
+                      value: '1'
+                    - type: INTEGER
+                      name: value_size
+                      value: '12'
+                    - type: STRING
+                      name: bg_color
+                      value: '777777'
+                    - type: STRING
+                      name: thresholds.0.color
+                      value: '43A047'
+                    - type: STRING
+                      name: thresholds.0.threshold
+                      value: '1'
+                    - type: STRING
+                      name: thresholds.1.color
+                      value: 'E53935'
+                    - type: STRING
+                      name: thresholds.1.threshold
+                      value: '2'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1723,7 +2099,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1756,7 +2132,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1789,7 +2165,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1822,7 +2198,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1855,7 +2231,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1888,7 +2264,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1921,7 +2297,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: item
                   name: 'Link capacity'
                   x: '30'
@@ -1954,7 +2330,7 @@ zabbix_export:
                       value: '1'
                     - type: INTEGER
                       name: value_size
-                      value: '20'
+                      value: '12'
                 - type: graph
                   name: 'Port1 — Live traffic'
                   x: '40'
@@ -2025,7 +2401,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'F1_Port5 Fiber TCI1 traffic'
+                        name: 'F1_Port5 traffic'
                     - type: STRING
                       name: reference
                       value: P5LIVE
@@ -2040,7 +2416,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'RadioTCI1_Port6 Radio TCI1 traffic'
+                        name: 'RadioTCI1_Port6 traffic'
                     - type: STRING
                       name: reference
                       value: P6LIVE
@@ -2055,7 +2431,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'RadioTCI2_Port7 Radio TCI2 traffic'
+                        name: 'RadioTCI2_Port7 traffic'
                     - type: STRING
                       name: reference
                       value: P7LIVE
@@ -2070,7 +2446,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Mikrotik Mikrotik traffic'
+                        name: 'Mikrotik traffic'
                     - type: STRING
                       name: reference
                       value: P8LIVE
@@ -2221,7 +2597,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port4.out
     - uuid: 282b514ff6ea4a6b954531f65f18f79a
-      name: 'F1_Port5 Fiber TCI1 traffic'
+      name: 'F1_Port5 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2236,7 +2612,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port5.out
     - uuid: b179c796ae9d4592b18ce3bfb2430064
-      name: 'RadioTCI1_Port6 Radio TCI1 traffic'
+      name: 'RadioTCI1_Port6 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2251,7 +2627,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port6.out
     - uuid: d795c0a32f8a459e82c47da9beefc194
-      name: 'RadioTCI2_Port7 Radio TCI2 traffic'
+      name: 'RadioTCI2_Port7 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2266,7 +2642,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port7.out
     - uuid: 1177c90b30ec4e65bc371d81f8ab02ad
-      name: 'Mikrotik Mikrotik traffic'
+      name: 'Mikrotik traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
