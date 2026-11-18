@@ -14,7 +14,7 @@ zabbix_export:
         - uuid: aa000000000000000000000000000001
           name: 'Interface IP tables — dynamic source'
           type: SNMP_AGENT
-          snmp_oid: 'walk[1.3.6.1.2.1.4.20.1.2,1.3.6.1.2.1.4.21.1.2,1.3.6.1.2.1.4.21.1.11]'
+          snmp_oid: 'walk[1.3.6.1.2.1.4.20.1.2]'
           key: sophos.ip.tables.raw
           delay: 5m
           history: 1d
@@ -25,7 +25,8 @@ zabbix_export:
           key: sophos.port1.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -43,7 +44,8 @@ zabbix_export:
           key: sophos.port2.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -61,7 +63,8 @@ zabbix_export:
           key: sophos.port3.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -79,7 +82,8 @@ zabbix_export:
           key: sophos.port4.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -97,7 +101,8 @@ zabbix_export:
           key: sophos.port5.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -115,7 +120,8 @@ zabbix_export:
           key: sophos.port6.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
@@ -133,32 +139,25 @@ zabbix_export:
           key: sophos.port7.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
                 - |
                     var lines = value.split(/\r?\n/);
-                    var ifIndex = {};
-                    var netmask = {};
                     var ips = [];
                     for (var i = 0; i < lines.length; i++) {
-                        var idxMatch = lines[i].match(/^\.?1\.3\.6\.1\.2\.1\.4\.21\.1\.2\.(\d+\.\d+\.\d+\.\d+)\s*=\s*INTEGER:\s*(\d+)\s*$/);
-                        if (idxMatch) ifIndex[idxMatch[1]] = Number(idxMatch[2]);
-                        var maskMatch = lines[i].match(/^\.?1\.3\.6\.1\.2\.1\.4\.21\.1\.11\.(\d+\.\d+\.\d+\.\d+)\s*=\s*IpAddress:\s*(\d+\.\d+\.\d+\.\d+)\s*$/);
-                        if (maskMatch) netmask[maskMatch[1]] = maskMatch[2];
+                        var m = lines[i].match(/^\.?1\.3\.6\.1\.2\.1\.4\.20\.1\.2\.(\d+\.\d+\.\d+\.\d+)\s*=\s*INTEGER:\s*(\d+)\s*$/);
+                        if (m && Number(m[2]) === 30 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
-                    for (var ip in ifIndex) {
-                        if (ifIndex[ip] === 30 && netmask[ip] === "255.255.255.255") ips.push(ip);
-                    }
-                    return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000009
-          name: 'Port8 — Mikrotik: IP address'
+                    return ips.length ? ips.join(" / ") : "No IP data";name: 'Port8 — Mikrotik: IP address'
           type: DEPENDENT
           key: sophos.port8.ip
           history: 7d
           value_type: CHAR
-          master_item: sophos.ip.tables.raw
+          master_item:
+            key: sophos.ip.tables.raw
           preprocessing:
             - type: JAVASCRIPT
               parameters:
