@@ -1,17 +1,17 @@
 zabbix_export:
   version: '8.0'
   template_groups:
-    - uuid: f7de4e20ac2d47c4ae7752da92a735db
+    - uuid: f7de4e20-ac2d-47c4-ae77-52da92a735db
       name: 'Templates/Network devices'
   templates:
-    - uuid: e7260b4edd45498ebd2f3fa7dd2dc5b0
+    - uuid: e7260b4e-dd45-498e-bd2f-3fa7dd2dc5b0
       template: Sophos_XGS3300_SNMPv3_Complete
       name: 'Sophos XGS 3300 SNMPv3 Complete'
       description: 'Complete starter monitoring for Sophos XGS 3300 using SNMPv3. Port1-Port8 indexes 12-19 are based on verified SNMP walk and Sophos API interface inventory. Verified names: Port1, SIP-TRunk, Radio-Shanet1-Port3, Radio-Shanet2-Port4, F1_Port5, RadioTCI1_Port6, RadioTCI2_Port7, Mikrotik. Traffic is bps derived from Counter64 octets.'
       groups:
         - name: 'Templates/Network devices'
       items:
-        - uuid: aa000000000000000000000000000001
+        - uuid: b3c8a9ac-9f94-4fd3-9e37-bebc70978401
           name: 'Interface IP tables — dynamic source'
           type: SNMP_AGENT
           snmp_oid: 'walk[1.3.6.1.2.1.4.20.1.2]'
@@ -19,7 +19,7 @@ zabbix_export:
           delay: 5m
           history: 1d
           value_type: TEXT
-        - uuid: aa000000000000000000000000000002
+        - uuid: a7b9acf5-7708-44a1-b477-94b0b4a8191f
           name: 'Port1 — LAN: IP address'
           type: DEPENDENT
           key: sophos.port1.ip
@@ -38,7 +38,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 12 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000003
+        - uuid: 2c499be8-5c51-4b15-90a3-15b155c7fd36
           name: 'Port2 — SIP Trunk: IP address'
           type: DEPENDENT
           key: sophos.port2.ip
@@ -57,7 +57,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 13 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000004
+        - uuid: c08da5a7-7fb0-4283-928f-273ea77a42fc
           name: 'Port3 — Radio Shanet1: IP address'
           type: DEPENDENT
           key: sophos.port3.ip
@@ -76,7 +76,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 14 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000005
+        - uuid: d3fb41d0-03ba-4a26-b47a-37495d2c07a2
           name: 'Port4 — Radio Shanet2: IP address'
           type: DEPENDENT
           key: sophos.port4.ip
@@ -95,7 +95,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 15 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000006
+        - uuid: 1687fcd3-cd24-46fd-94b4-439c119c4103
           name: 'Port5 — Fiber TCI1: IP address'
           type: DEPENDENT
           key: sophos.port5.ip
@@ -114,7 +114,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 16 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000007
+        - uuid: 6b68d47c-0844-40b2-9703-963df5ebb94d
           name: 'Port6 — Radio TCI1: IP address'
           type: DEPENDENT
           key: sophos.port6.ip
@@ -133,7 +133,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 17 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000008
+        - uuid: cefbcb35-ff27-4a63-9b44-60a5f6a9b5f2
           name: 'Port7 — PPPoE: IP address'
           type: DEPENDENT
           key: sophos.port7.ip
@@ -152,7 +152,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 30 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: aa000000000000000000000000000009
+        - uuid: 264b852e-ae26-49ac-bd95-f1ce65fb9fd9
           name: 'Port8 — Mikrotik: IP address'
           type: DEPENDENT
           key: sophos.port8.ip
@@ -171,7 +171,7 @@ zabbix_export:
                         if (m && Number(m[2]) === 19 && ips.indexOf(m[1]) === -1) ips.push(m[1]);
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
-        - uuid: 5436303db4994adba3fd89a84260e20d
+        - uuid: 5436303d-b499-4adb-a3fd-89a84260e20d
           name: 'CPU core 1 utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.25.3.3.1.2.196608
@@ -179,7 +179,7 @@ zabbix_export:
           history: 7d
           value_type: FLOAT
           units: '%'
-        - uuid: 6b202e04b948402287ee53ef8a4a8b2a
+        - uuid: 6b202e04-b948-4022-87ee-53ef8a4a8b2a
           name: 'CPU core 2 utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.25.3.3.1.2.196609
@@ -187,7 +187,7 @@ zabbix_export:
           history: 7d
           value_type: FLOAT
           units: '%'
-        - uuid: 7fbd8a5f8850465d924c057fe071943b
+        - uuid: 7fbd8a5f-8850-465d-924c-057fe071943b
           name: 'CPU core 3 utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.25.3.3.1.2.196610
@@ -195,7 +195,7 @@ zabbix_export:
           history: 7d
           value_type: FLOAT
           units: '%'
-        - uuid: 375bbd4ac43b4376ba1514db96387be8
+        - uuid: 375bbd4a-c43b-4376-ba15-14db96387be8
           name: 'CPU core 4 utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.25.3.3.1.2.196611
@@ -203,7 +203,7 @@ zabbix_export:
           history: 7d
           value_type: FLOAT
           units: '%'
-        - uuid: 32a268c9dafc412b81d9098c1de0f856
+        - uuid: 32a268c9-dafc-412b-81d9-098c1de0f856
           name: 'Disk utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.2.4.2.0
@@ -212,11 +212,11 @@ zabbix_export:
           value_type: FLOAT
           units: '%'
           triggers:
-            - uuid: 7ace8553b1174dd3861536ab336705ae
+            - uuid: 7ace8553-b117-4dd3-8615-36ab336705ae
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.disk.util,5m)>85'
               name: 'Sophos disk utilization above 85%'
               priority: HIGH
-        - uuid: 753b1e4989bd4321b0ac411df95fd13a
+        - uuid: 753b1e49-89bd-4321-b0ac-411df95fd13a
           name: 'Firmware / system description'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.1.1.0
@@ -225,19 +225,19 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Read from SNMP sysDescr.0; Sophos firmware version may be embedded in this string.'
-        - uuid: 7bf72c48b20b419bbab9e6a5066b2a3c
+        - uuid: 7bf72c48-b20b-419b-bab9-e6a5066b2a3c
           name: 'HA enabled'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.4.1.0
           key: sophos.ha.enabled
           history: 7d
-        - uuid: b720813a3db244aeb4c08b56546b1eae
+        - uuid: b720813a-3db2-44ae-b4c0-8b56546b1eae
           name: 'HA current state'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.4.4.0
           key: sophos.ha.state
           history: 7d
-        - uuid: 6fc38aacdbac4eb4bba8577df9f34a8c
+        - uuid: 6fc38aac-dbac-4eb4-bba8-577df9f34a8c
           name: 'Memory utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.2.5.2.0
@@ -246,11 +246,11 @@ zabbix_export:
           value_type: FLOAT
           units: '%'
           triggers:
-            - uuid: afe1c155b04443df934d9bbfc39d0adf
+            - uuid: afe1c155-b044-43df-934d-9bbfc39d0adf
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.memory.util,5m)>90'
               name: 'Sophos memory utilization above 90%'
               priority: HIGH
-        - uuid: c4a97478eace4f03b63e8dd873b5bd64
+        - uuid: c4a97478-eace-4f03-b63e-8dd873b5bd64
           name: 'Port1 — LAN — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.12
@@ -259,7 +259,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 12.'
-        - uuid: 7490fc48a3fc4ab0a5b76fe2178505c2
+        - uuid: 7490fc48-a3fc-4ab0-a5b7-6fe2178505c2
           name: 'Port1 — LAN: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.12
@@ -272,14 +272,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 191ed4f269c7432985e08ad541623932
+        - uuid: 191ed4f2-69c7-4329-85e0-8ad541623932
           name: 'Port1 — LAN: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.12
           key: sophos.port1.in.errors
           history: 7d
           units: errors
-        - uuid: 5bcf4f59655a42508ad7de3ac0b11768
+        - uuid: 5bcf4f59-655a-4250-8ad7-de3ac0b11768
           name: 'Port1 — LAN: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.12
@@ -292,14 +292,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 13cd30ad98044f9abf2ca2110d86bba0
+        - uuid: 13cd30ad-9804-4f9a-bf2c-a2110d86bba0
           name: 'Port1 — LAN: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.12
           key: sophos.port1.out.errors
           history: 7d
           units: errors
-        - uuid: b686f39e345645ea90a7778f0e9218af
+        - uuid: b686f39e-3456-45ea-90a7-778f0e9218af
           name: 'Port1 — LAN: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.12
@@ -307,7 +307,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: 69a202b5f6884b75b591257f9500bf37
+        - uuid: 69a202b5-f688-4b75-b591-257f9500bf37
           name: 'Port1 — LAN: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.12
@@ -316,17 +316,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: 59a53c8b15cd4822abb16aefdeb4c427
+            - uuid: 59a53c8b-15cd-4822-abb1-6aefdeb4c427
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port1.status,2m)=2'
               name: 'Sophos Port1 — LAN link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: bfb2d8249baa4810bfaaa9cce52d8836
+            - uuid: bfb2d824-9baa-4810-bfaa-a9cce52d8836
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port1.status,5m)=2'
               name: 'Sophos Port1 — LAN link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: d3813003cad84c7484edb30b7cf24e9c
+        - uuid: d3813003-cad8-4c74-84ed-b30b7cf24e9c
           name: 'Port2 — SIP Trunk — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.13
@@ -335,7 +335,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 13.'
-        - uuid: 3839ad416ed645a7b9c89ac1ffb35e6a
+        - uuid: 3839ad41-6ed6-45a7-b9c8-9ac1ffb35e6a
           name: 'Port2 — SIP Trunk: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.13
@@ -348,14 +348,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: da1d8d787312416cacd7ceb9509152d5
+        - uuid: da1d8d78-7312-416c-acd7-ceb9509152d5
           name: 'Port2 — SIP Trunk: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.13
           key: sophos.port2.in.errors
           history: 7d
           units: errors
-        - uuid: 61935791f2c6403abb2b793c82a43ccd
+        - uuid: 61935791-f2c6-403a-bb2b-793c82a43ccd
           name: 'Port2 — SIP Trunk: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.13
@@ -368,14 +368,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 6abe5f8a72d5476b97d8b9b1f9641781
+        - uuid: 6abe5f8a-72d5-476b-97d8-b9b1f9641781
           name: 'Port2 — SIP Trunk: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.13
           key: sophos.port2.out.errors
           history: 7d
           units: errors
-        - uuid: f79785c06ec94805943713d9d63df8dc
+        - uuid: f79785c0-6ec9-4805-9437-13d9d63df8dc
           name: 'Port2 — SIP Trunk: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.13
@@ -383,7 +383,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: 042c2df2950e476d8956b0d1971a6d30
+        - uuid: 042c2df2-950e-476d-8956-b0d1971a6d30
           name: 'Port2 — SIP Trunk: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.13
@@ -392,17 +392,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: 96d86769145b4a609a20488eb8379bf4
+            - uuid: 96d86769-145b-4a60-9a20-488eb8379bf4
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port2.status,2m)=2'
               name: 'Sophos Port2 — SIP Trunk link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: 2962902638c340fea4cf961785f1049a
+            - uuid: 29629026-38c3-40fe-a4cf-961785f1049a
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port2.status,5m)=2'
               name: 'Sophos Port2 — SIP Trunk link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: 47329294f9e84150947394f439a052a9
+        - uuid: 47329294-f9e8-4150-9473-94f439a052a9
           name: 'Port3 — Radio Shanet1 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.14
@@ -411,7 +411,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 14.'
-        - uuid: b229b3bea64b464f8c3ef0a965ad7ed3
+        - uuid: b229b3be-a64b-464f-8c3e-f0a965ad7ed3
           name: 'Port3 — Radio Shanet1: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.14
@@ -424,14 +424,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: edfd7e40e8b34ee88440641197ae1537
+        - uuid: edfd7e40-e8b3-4ee8-8440-641197ae1537
           name: 'Port3 — Radio Shanet1: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.14
           key: sophos.port3.in.errors
           history: 7d
           units: errors
-        - uuid: 57fa94c7a1db48119975191114ecd1c7
+        - uuid: 57fa94c7-a1db-4811-9975-191114ecd1c7
           name: 'Port3 — Radio Shanet1: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.14
@@ -444,14 +444,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 7278afd525f3432c8478437a02d3f55a
+        - uuid: 7278afd5-25f3-432c-8478-437a02d3f55a
           name: 'Port3 — Radio Shanet1: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.14
           key: sophos.port3.out.errors
           history: 7d
           units: errors
-        - uuid: 78b261638e664f728b31d43e4e2e7cc1
+        - uuid: 78b26163-8e66-4f72-8b31-d43e4e2e7cc1
           name: 'Port3 — Radio Shanet1: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.14
@@ -459,7 +459,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: e878cd15dec644ebade711b35cdc5bf9
+        - uuid: e878cd15-dec6-44eb-ade7-11b35cdc5bf9
           name: 'Port3 — Radio Shanet1: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.14
@@ -468,17 +468,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: 1faa16ec1c4a4e86b575750b057dc0d2
+            - uuid: 1faa16ec-1c4a-4e86-b575-750b057dc0d2
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port3.status,2m)=2'
               name: 'Sophos Port3 — Radio Shanet1 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: 03bb9d1861bf4d83a12408648b73254b
+            - uuid: 03bb9d18-61bf-4d83-a124-08648b73254b
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port3.status,5m)=2'
               name: 'Sophos Port3 — Radio Shanet1 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: 64c5bbd79f77498f82c6b39a3213dedf
+        - uuid: 64c5bbd7-9f77-498f-82c6-b39a3213dedf
           name: 'Port4 — Radio Shanet2 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.15
@@ -487,7 +487,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 15.'
-        - uuid: c7a8b6c4b6f64055b0fa4d00a8c12b10
+        - uuid: c7a8b6c4-b6f6-4055-b0fa-4d00a8c12b10
           name: 'Port4 — Radio Shanet2: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.15
@@ -500,14 +500,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 3c23825cfe3d4545970233b62d169d3c
+        - uuid: 3c23825c-fe3d-4545-9702-33b62d169d3c
           name: 'Port4 — Radio Shanet2: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.15
           key: sophos.port4.in.errors
           history: 7d
           units: errors
-        - uuid: e659be91275744a2a77e7ca2a497f967
+        - uuid: e659be91-2757-44a2-a77e-7ca2a497f967
           name: 'Port4 — Radio Shanet2: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.15
@@ -520,14 +520,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 408486dd01044e86878f2df3e518df55
+        - uuid: 408486dd-0104-4e86-878f-2df3e518df55
           name: 'Port4 — Radio Shanet2: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.15
           key: sophos.port4.out.errors
           history: 7d
           units: errors
-        - uuid: f71c37bc95f347bd982bc5cbf803d663
+        - uuid: f71c37bc-95f3-47bd-982b-c5cbf803d663
           name: 'Port4 — Radio Shanet2: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.15
@@ -535,7 +535,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: 2ed23fd7058b4b5b9fa97d29b2fb5e62
+        - uuid: 2ed23fd7-058b-4b5b-9fa9-7d29b2fb5e62
           name: 'Port4 — Radio Shanet2: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.15
@@ -544,17 +544,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: ac74a4fb6ced49b494836becc8af0cbd
+            - uuid: ac74a4fb-6ced-49b4-9483-6becc8af0cbd
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port4.status,2m)=2'
               name: 'Sophos Port4 — Radio Shanet2 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: d7f61b334dcc4d1a89a8a80df8f4036c
+            - uuid: d7f61b33-4dcc-4d1a-89a8-a80df8f4036c
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port4.status,5m)=2'
               name: 'Sophos Port4 — Radio Shanet2 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: 387f717a627443b284a48420617b5d76
+        - uuid: 387f717a-6274-43b2-84a4-8420617b5d76
           name: 'WAN1 — Fiber TCI1 (F1_Port5) — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.16
@@ -563,7 +563,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 16. Sophos API identifies this as F1_Port5; WAN gateway Fiber_TCI1.'
-        - uuid: 816dde04898e48f3bc713b4ff115feab
+        - uuid: 816dde04-898e-48f3-bc71-3b4ff115feab
           name: 'WAN1 Fiber TCI1: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.16
@@ -576,14 +576,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: fcd5afbcfa6846279843b38c9b47dfb5
+        - uuid: fcd5afbc-fa68-4627-9843-b38c9b47dfb5
           name: 'Port5: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.16
           key: sophos.port5.in.errors
           history: 7d
           units: errors
-        - uuid: 850078caa41148ca9d476ec4a14a079b
+        - uuid: 850078ca-a411-48ca-9d47-6ec4a14a079b
           name: 'WAN1 Fiber TCI1: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.16
@@ -596,14 +596,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: ece464c6f53d43ad88861fb0d074f2a3
+        - uuid: ece464c6-f53d-43ad-8886-1fb0d074f2a3
           name: 'Port5: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.16
           key: sophos.port5.out.errors
           history: 7d
           units: errors
-        - uuid: eb5a285c644740728eeb09fa52146648
+        - uuid: eb5a285c-6447-4072-8eeb-09fa52146648
           name: 'Port5: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.16
@@ -611,7 +611,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: db4e58aaf802458588013a251d680d45
+        - uuid: db4e58aa-f802-4585-8801-3a251d680d45
           name: 'Port5: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.16
@@ -620,17 +620,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: dba91303fd41455c8f380e27dcb0f06e
+            - uuid: dba91303-fd41-455c-8f38-0e27dcb0f06e
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port5.status,2m)=2'
               name: 'Sophos Port5 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: f297ec48408d4389ad9748e49fd49e9d
+            - uuid: f297ec48-408d-4389-ad97-48e49fd49e9d
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port5.status,5m)=2'
               name: 'Sophos Port5 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: f84b80d65c164f5daf72c2b9c7b0b9d9
+        - uuid: f84b80d6-5c16-4f5d-af72-c2b9c7b0b9d9
           name: 'WAN2 — Radio TCI1 (RadioTCI1_Port6) — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.17
@@ -639,7 +639,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 17. Sophos API identifies this as RadioTCI1_Port6.'
-        - uuid: 4e0c6056364e40168033529a737b3da3
+        - uuid: 4e0c6056-364e-4016-8033-529a737b3da3
           name: 'WAN2 Radio TCI1: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.17
@@ -652,14 +652,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 85b960d4630e46268dddc7cf130e4d37
+        - uuid: 85b960d4-630e-4626-8ddd-c7cf130e4d37
           name: 'Port6: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.17
           key: sophos.port6.in.errors
           history: 7d
           units: errors
-        - uuid: 948707bf725546818c528521de62b286
+        - uuid: 948707bf-7255-4681-8c52-8521de62b286
           name: 'WAN2 Radio TCI1: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.17
@@ -672,14 +672,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 352ae86b93e94e6eac24b8863c42150a
+        - uuid: 352ae86b-93e9-4e6e-ac24-b8863c42150a
           name: 'Port6: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.17
           key: sophos.port6.out.errors
           history: 7d
           units: errors
-        - uuid: 782a8faf3d33456ea2d75a6c39762e38
+        - uuid: 782a8faf-3d33-456e-a2d7-5a6c39762e38
           name: 'Port6: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.17
@@ -687,7 +687,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: 2278721d3aa541978eb977fe64e03668
+        - uuid: 2278721d-3aa5-4197-8eb9-77fe64e03668
           name: 'Port6: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.17
@@ -696,17 +696,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: f173d926f6924d72850f34e6bd06bb8e
+            - uuid: f173d926-f692-4d72-850f-34e6bd06bb8e
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port6.status,2m)=2'
               name: 'Sophos Port6 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: f480e00aad804ca48c6256173c2b478b
+            - uuid: f480e00a-ad80-4ca4-8c62-56173c2b478b
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port6.status,5m)=2'
               name: 'Sophos Port6 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: ffb034b4c08f4e4c97847a24f50d6aae
+        - uuid: ffb034b4-c08f-4e4c-9784-7a24f50d6aae
           name: 'WAN3 — Radio TCI2 (RadioTCI2_Port7) — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.18
@@ -715,7 +715,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 18. Sophos API identifies this as RadioTCI2_Port7.'
-        - uuid: be0734faf7db49ea8e0fc3e2004703c1
+        - uuid: be0734fa-f7db-49ea-8e0f-c3e2004703c1
           name: 'WAN3 Radio TCI2: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.18
@@ -728,14 +728,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 34247c58e8054607b000772dd0486b3f
+        - uuid: 34247c58-e805-4607-b000-772dd0486b3f
           name: 'Port7: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.18
           key: sophos.port7.in.errors
           history: 7d
           units: errors
-        - uuid: e37d5cbf09574547b3dad75122093bdb
+        - uuid: e37d5cbf-0957-4547-b3da-d75122093bdb
           name: 'WAN3 Radio TCI2: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.18
@@ -748,14 +748,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 4c1d5f96382d4e05a9be3bc7fe166f00
+        - uuid: 4c1d5f96-382d-4e05-a9be-3bc7fe166f00
           name: 'Port7: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.18
           key: sophos.port7.out.errors
           history: 7d
           units: errors
-        - uuid: 2e24355fc264493fb9a1d9761fe48c0d
+        - uuid: 2e24355f-c264-493f-b9a1-d9761fe48c0d
           name: 'Port7: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.18
@@ -763,7 +763,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: d14c0722d9a74d1fa68ce78cc49aec60
+        - uuid: d14c0722-d9a7-4d1f-a68c-e78cc49aec60
           name: 'Port7: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.18
@@ -772,17 +772,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: eb2c8c2cddca4ec9b3c296f0304c0e55
+            - uuid: eb2c8c2c-ddca-4ec9-b3c2-96f0304c0e55
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port7.status,2m)=2'
               name: 'Sophos Port7 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: f1985c9ad3ee4253a2818088be4f0582
+            - uuid: f1985c9a-d3ee-4253-a281-8088be4f0582
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port7.status,5m)=2'
               name: 'Sophos Port7 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: b5206f92f6184dd68375d6ba2832ee85
+        - uuid: b5206f92-f618-4dd6-8375-d6ba2832ee85
           name: 'WAN4 — Mikrotik — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.19
@@ -791,7 +791,7 @@ zabbix_export:
           history: 7d
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 19. Sophos API identifies this as Mikrotik.'
-        - uuid: 55b3ea4d35fc4f38babf005c035b50e7
+        - uuid: 55b3ea4d-35fc-4f38-babf-005c035b50e7
           name: 'WAN4 Mikrotik: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.19
@@ -804,14 +804,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: 8c40a209aa2a40ef97d1964f23aba3e2
+        - uuid: 8c40a209-aa2a-40ef-97d1-964f23aba3e2
           name: 'Port8: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.19
           key: sophos.port8.in.errors
           history: 7d
           units: errors
-        - uuid: f8570b5a30954052a2536c036dced90e
+        - uuid: f8570b5a-3095-4052-a253-6c036dced90e
           name: 'WAN4 Mikrotik: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.19
@@ -824,14 +824,14 @@ zabbix_export:
             - type: MULTIPLIER
               parameters:
                 - '8'
-        - uuid: e36fe1fdd658408b890a4d3613247714
+        - uuid: e36fe1fd-d658-408b-890a-4d3613247714
           name: 'Port8: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.19
           key: sophos.port8.out.errors
           history: 7d
           units: errors
-        - uuid: 5508971eda1b4e6ab00d4a2ce0930519
+        - uuid: 5508971e-da1b-4e6a-b00d-4a2ce0930519
           name: 'Port8: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.19
@@ -839,7 +839,7 @@ zabbix_export:
           history: 7d
           value_type: UNSIGNED
           units: Mbps
-        - uuid: 54acfb0486704b86b98c2bebd26b1d96
+        - uuid: 54acfb04-8670-4b86-b98c-2bebd26b1d96
           name: 'Port8: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.19
@@ -848,17 +848,17 @@ zabbix_export:
           valuemap:
             name: 'Sophos IF-MIB operational status'
           triggers:
-            - uuid: afbf2818e8754fff89e1f68cfcb9ea03
+            - uuid: afbf2818-e875-4fff-89e1-f68cfcb9ea03
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port8.status,2m)=2'
               name: 'Sophos Port8 link down for 2 minutes'
               priority: WARNING
               description: 'Port1-Port8 only. ifOperStatus=2 means down.'
-            - uuid: 7dc58155d67b4aa8aa6e24b236393032
+            - uuid: 7dc58155-d67b-4aa8-aa6e-24b236393032
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.port8.status,5m)=2'
               name: 'Sophos Port8 link down for 5 minutes'
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
-        - uuid: 76f8fd2a342d4a46b3e15fdf6f84a792
+        - uuid: 76f8fd2a-342d-4a46-b3e1-5fdf6f84a792
           name: 'Swap utilization'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.2.5.4.0
@@ -867,11 +867,11 @@ zabbix_export:
           value_type: FLOAT
           units: '%'
           triggers:
-            - uuid: c907a5629ca34dc9a2f3bbb85376e43d
+            - uuid: c907a562-9ca3-4dc9-a2f3-bbb85376e43d
               expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.swap.util,5m)>80'
               name: 'Sophos swap utilization above 80%'
               priority: WARNING
-        - uuid: 4c1f6526077643cb91644a8ef0a5321f
+        - uuid: 4c1f6526-0776-43cb-9164-4a8ef0a5321f
           name: 'System uptime'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.1.3.0
@@ -879,15 +879,15 @@ zabbix_export:
           history: 7d
           units: uptime
           triggers:
-            - uuid: 14c265070fc64ebd8eb5f862b80bafc8
+            - uuid: 14c26507-0fc6-4ebd-8eb5-f862b80bafc8
               expression: 'nodata(/Sophos_XGS3300_SNMPv3_Complete/sophos.uptime,2m)=1'
               name: 'Sophos SNMP data unavailable for 2 minutes'
               priority: WARNING
-            - uuid: b2cf912b38a04efaa61373f39d8b0074
+            - uuid: b2cf912b-38a0-4efa-a613-73f39d8b0074
               expression: 'nodata(/Sophos_XGS3300_SNMPv3_Complete/sophos.uptime,5m)=1'
               name: 'Sophos SNMP data unavailable for 5 minutes'
               priority: HIGH
-        - uuid: 6d99ad54fc654accb4e0c662ad6dfb6c
+        - uuid: 6d99ad54-fc65-4acc-b4e0-c662ad6dfb6c
           name: 'Live captive portal users'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.4.1.2604.5.1.2.6.0
@@ -895,21 +895,21 @@ zabbix_export:
           history: 7d
           units: users
       discovery_rules:
-        - uuid: da29b22942ba4c6ba2bb7821068dec67
+        - uuid: da29b229-42ba-4c6b-a2bb-7821068dec67
           name: 'Sophos VPN tunnel discovery'
           type: SNMP_AGENT
           snmp_oid: 'discovery[{#VPNNAME},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9]'
           key: sophos.vpn.discovery
           delay: 5m
           item_prototypes:
-            - uuid: d2e9ebea1b1e47758b1e1a7c36f9f722
+            - uuid: d2e9ebea-1b1e-4775-8b1e-1a7c36f9f722
               name: 'VPN {#VPNNAME}: activation status'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.10.{#SNMPINDEX}'
               key: 'sophos.vpn.activated[{#SNMPINDEX}]'
               delay: 5m
               history: 7d
-            - uuid: 988cc0fba3344ea593eac42faf040aff
+            - uuid: 988cc0fb-a334-4ea5-93ea-c42faf040aff
               name: 'VPN {#VPNNAME}: active tunnel count'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.8.{#SNMPINDEX}'
@@ -917,7 +917,7 @@ zabbix_export:
               delay: 5m
               history: 7d
               units: tunnels
-            - uuid: 748bd34444874ffc9bc23ffa0b07f65c
+            - uuid: 748bd344-4487-4ffc-9bc2-3ffa0b07f65c
               name: 'VPN {#VPNNAME}: description'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.3.{#SNMPINDEX}'
@@ -925,7 +925,7 @@ zabbix_export:
               delay: 5m
               history: 7d
               value_type: CHAR
-            - uuid: 5ab5518378e2416d80789dede9e291cb
+            - uuid: 5ab55183-78e2-416d-8078-9dede9e291cb
               name: 'VPN {#VPNNAME}: local gateway port'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.7.{#SNMPINDEX}'
@@ -933,7 +933,7 @@ zabbix_export:
               delay: 5m
               history: 7d
               value_type: CHAR
-            - uuid: 65959083def144eebe1f86385577f479
+            - uuid: 65959083-def1-44ee-be1f-86385577f479
               name: 'VPN {#VPNNAME}: mode'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.5.{#SNMPINDEX}'
@@ -941,7 +941,7 @@ zabbix_export:
               delay: 5m
               history: 7d
               value_type: CHAR
-            - uuid: bd14dbb5e6ac4a0aa65096a70eaa8f61
+            - uuid: bd14dbb5-e6ac-4a0a-a650-96a70eaa8f61
               name: 'VPN {#VPNNAME}: tunnel name'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2.{#SNMPINDEX}'
@@ -949,7 +949,7 @@ zabbix_export:
               delay: 1h
               history: 7d
               value_type: CHAR
-            - uuid: 4f426c3fe1c3437684fe6c6dc1f101a8
+            - uuid: 4f426c3f-e1c3-4376-84fe-6c6dc1f101a8
               name: 'VPN {#VPNNAME}: policy'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.4.{#SNMPINDEX}'
@@ -957,24 +957,24 @@ zabbix_export:
               delay: 5m
               history: 7d
               value_type: CHAR
-            - uuid: dbe8b2a4af6b4f98a8bf3b82cd5cf6e8
+            - uuid: dbe8b2a4-af6b-4f98-a8bf-3b82cd5cf6e8
               name: 'VPN {#VPNNAME}: status'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9.{#SNMPINDEX}'
               key: 'sophos.vpn.status[{#SNMPINDEX}]'
               history: 7d
               trigger_prototypes:
-                - uuid: a3a0dd6420b14d71bf5bf1806f48b944
+                - uuid: a3a0dd64-20b1-4d71-bf5b-f1806f48b944
                   expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}],3m)=0'
                   name: 'VPN {#VPNNAME}: tunnel inactive for 3 minutes'
                   priority: HIGH
                   description: 'MIB enum: 0=inactive, 1=active, 2=partially-active. Confirm actual behavior during post-import test.'
-                - uuid: edfbe42fa4064612aa428b7a4dc3ae81
+                - uuid: edfbe42f-a406-4612-aa42-8b7a4dc3ae81
                   expression: 'last(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}])=2'
                   name: 'VPN {#VPNNAME}: tunnel partially active'
                   priority: WARNING
                   description: 'VPN status 2 means partially-active.'
-            - uuid: 505c88bf60884dc8ad906ac309f1a712
+            - uuid: 505c88bf-6088-4dc8-ad90-6ac309f1a712
               name: 'VPN {#VPNNAME}: type'
               type: SNMP_AGENT
               snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.6.{#SNMPINDEX}'
@@ -982,7 +982,7 @@ zabbix_export:
               delay: 5m
               history: 7d
       dashboards:
-        - uuid: 0d273b44b7944f71b3108f7b16c566e8
+        - uuid: 0d273b44-b794-4f71-b310-8f7b16c566e8
           name: 'Sophos XGS 3300 - Firewall Overview'
           pages:
             - name: Overview
@@ -2133,7 +2133,7 @@ zabbix_export:
                       name: reference
                       value: 'VPNST'
       valuemaps:
-        - uuid: 7f3b4d1c9a2e4b6d8f0a1c2e3b4d5f60
+        - uuid: 7f3b4d1c-9a2e-4b6d-8f0a-1c2e3b4d5f60
           name: 'Sophos VPN tunnel status'
           mappings:
             - value: '0'
@@ -2142,7 +2142,7 @@ zabbix_export:
               newvalue: Active
             - value: '2'
               newvalue: Partial
-        - uuid: 86205157b50c456aaab259e5577fafdb
+        - uuid: 86205157-b50c-456a-aab2-59e5577fafdb
           name: 'Sophos IF-MIB operational status'
           mappings:
             - value: '1'
@@ -2160,7 +2160,7 @@ zabbix_export:
             - value: '7'
               newvalue: 'LOWER LAYER DOWN'
   graphs:
-    - uuid: e4efc89561374a8aad54357adc645339
+    - uuid: e4efc895-6137-4a8a-ad54-357adc645339
       name: 'Port1 — LAN traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2175,7 +2175,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port1.out
-    - uuid: fe7bd9c0347a41b7a81a07f782224057
+    - uuid: fe7bd9c0-347a-41b7-a81a-07f782224057
       name: 'Port2 — SIP Trunk traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2190,7 +2190,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port2.out
-    - uuid: f82aae25fd8d4954ad5b31326de1d9f2
+    - uuid: f82aae25-fd8d-4954-ad5b-31326de1d9f2
       name: 'Port3 — Radio Shanet1 traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2205,7 +2205,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port3.out
-    - uuid: f7b776deda094c8e91ddaa6877fa45a4
+    - uuid: f7b776de-da09-4c8e-91dd-aa6877fa45a4
       name: 'Port4 — Radio Shanet2 traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2220,7 +2220,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port4.out
-    - uuid: 282b514ff6ea4a6b954531f65f18f79a
+    - uuid: 282b514f-f6ea-4a6b-9545-31f65f18f79a
       name: 'WAN1 Fiber TCI1 traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2235,7 +2235,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port5.out
-    - uuid: b179c796ae9d4592b18ce3bfb2430064
+    - uuid: b179c796-ae9d-4592-b18c-e3bfb2430064
       name: 'WAN2 Radio TCI1 traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2250,7 +2250,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port6.out
-    - uuid: d795c0a32f8a459e82c47da9beefc194
+    - uuid: d795c0a3-2f8a-459e-82c4-7da9beefc194
       name: 'WAN3 Radio TCI2 traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2265,7 +2265,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port7.out
-    - uuid: 1177c90b30ec4e65bc371d81f8ab02ad
+    - uuid: 1177c90b-30ec-4e65-bc37-1d81f8ab02ad
       name: 'WAN4 Mikrotik traffic'
       show_work_period: 'NO'
       graph_items:
@@ -2280,7 +2280,7 @@ zabbix_export:
           item:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port8.out
-    - uuid: d3037f9955cf42358b5269b218d2479e
+    - uuid: d3037f99-55cf-4235-8b52-69b218d2479e
       name: 'System resource utilization'
       show_work_period: 'NO'
       graph_items:
