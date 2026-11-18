@@ -894,93 +894,6 @@ zabbix_export:
           key: sophos.users.live
           history: 7d
           units: users
-      discovery_rules:
-        - uuid: da29b22942ba4c6ba2bb7821068dec67
-          name: 'Sophos VPN tunnel discovery'
-          type: SNMP_AGENT
-          snmp_oid: 'discovery[{#VPNNAME},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9]'
-          key: sophos.vpn.discovery
-          delay: 5m
-          item_prototypes:
-            - uuid: d2e9ebea1b1e47758b1e1a7c36f9f722
-              name: 'VPN {#VPNNAME}: activation status'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.10.{#SNMPINDEX}'
-              key: 'sophos.vpn.activated[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-            - uuid: 988cc0fba3344ea593eac42faf040aff
-              name: 'VPN {#VPNNAME}: active tunnel count'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.8.{#SNMPINDEX}'
-              key: 'sophos.vpn.active_tunnels[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-              units: tunnels
-            - uuid: 748bd34444874ffc9bc23ffa0b07f65c
-              name: 'VPN {#VPNNAME}: description'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.3.{#SNMPINDEX}'
-              key: 'sophos.vpn.description[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-              value_type: CHAR
-            - uuid: 5ab5518378e2416d80789dede9e291cb
-              name: 'VPN {#VPNNAME}: local gateway port'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.7.{#SNMPINDEX}'
-              key: 'sophos.vpn.gateway[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-              value_type: CHAR
-            - uuid: 65959083def144eebe1f86385577f479
-              name: 'VPN {#VPNNAME}: mode'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.5.{#SNMPINDEX}'
-              key: 'sophos.vpn.mode[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-              value_type: CHAR
-            - uuid: bd14dbb5e6ac4a0aa65096a70eaa8f61
-              name: 'VPN {#VPNNAME}: tunnel name'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2.{#SNMPINDEX}'
-              key: 'sophos.vpn.name[{#SNMPINDEX}]'
-              delay: 1h
-              history: 7d
-              value_type: CHAR
-            - uuid: 4f426c3fe1c3437684fe6c6dc1f101a8
-              name: 'VPN {#VPNNAME}: policy'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.4.{#SNMPINDEX}'
-              key: 'sophos.vpn.policy[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
-              value_type: CHAR
-            - uuid: dbe8b2a4af6b4f98a8bf3b82cd5cf6e8
-              name: 'VPN {#VPNNAME}: status'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9.{#SNMPINDEX}'
-              key: 'sophos.vpn.status[{#SNMPINDEX}]'
-              history: 7d
-              trigger_prototypes:
-                - uuid: a3a0dd6420b14d71bf5bf1806f48b944
-                  expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}],3m)=0'
-                  name: 'VPN {#VPNNAME}: tunnel inactive for 3 minutes'
-                  priority: HIGH
-                  description: 'MIB enum: 0=inactive, 1=active, 2=partially-active. Confirm actual behavior during post-import test.'
-                - uuid: edfbe42fa4064612aa428b7a4dc3ae81
-                  expression: 'last(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}])=2'
-                  name: 'VPN {#VPNNAME}: tunnel partially active'
-                  priority: WARNING
-                  description: 'VPN status 2 means partially-active.'
-            - uuid: 505c88bf60884dc8ad906ac309f1a712
-              name: 'VPN {#VPNNAME}: type'
-              type: SNMP_AGENT
-              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.6.{#SNMPINDEX}'
-              key: 'sophos.vpn.type[{#SNMPINDEX}]'
-              delay: 5m
-              history: 7d
         - uuid: 2a10000100004000a000000000000001
           name: 'Internet usage — Office upload'
           type: ZABBIX_TRAPPER
@@ -1071,6 +984,93 @@ zabbix_export:
           value_type: UNSIGNED
           units: unixtime
           description: 'Unix timestamp of the last successful collector run.'
+      discovery_rules:
+        - uuid: da29b22942ba4c6ba2bb7821068dec67
+          name: 'Sophos VPN tunnel discovery'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#VPNNAME},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9]'
+          key: sophos.vpn.discovery
+          delay: 5m
+          item_prototypes:
+            - uuid: d2e9ebea1b1e47758b1e1a7c36f9f722
+              name: 'VPN {#VPNNAME}: activation status'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.10.{#SNMPINDEX}'
+              key: 'sophos.vpn.activated[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+            - uuid: 988cc0fba3344ea593eac42faf040aff
+              name: 'VPN {#VPNNAME}: active tunnel count'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.8.{#SNMPINDEX}'
+              key: 'sophos.vpn.active_tunnels[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+              units: tunnels
+            - uuid: 748bd34444874ffc9bc23ffa0b07f65c
+              name: 'VPN {#VPNNAME}: description'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.3.{#SNMPINDEX}'
+              key: 'sophos.vpn.description[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+              value_type: CHAR
+            - uuid: 5ab5518378e2416d80789dede9e291cb
+              name: 'VPN {#VPNNAME}: local gateway port'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.7.{#SNMPINDEX}'
+              key: 'sophos.vpn.gateway[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+              value_type: CHAR
+            - uuid: 65959083def144eebe1f86385577f479
+              name: 'VPN {#VPNNAME}: mode'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.5.{#SNMPINDEX}'
+              key: 'sophos.vpn.mode[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+              value_type: CHAR
+            - uuid: bd14dbb5e6ac4a0aa65096a70eaa8f61
+              name: 'VPN {#VPNNAME}: tunnel name'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2.{#SNMPINDEX}'
+              key: 'sophos.vpn.name[{#SNMPINDEX}]'
+              delay: 1h
+              history: 7d
+              value_type: CHAR
+            - uuid: 4f426c3fe1c3437684fe6c6dc1f101a8
+              name: 'VPN {#VPNNAME}: policy'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.4.{#SNMPINDEX}'
+              key: 'sophos.vpn.policy[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
+              value_type: CHAR
+            - uuid: dbe8b2a4af6b4f98a8bf3b82cd5cf6e8
+              name: 'VPN {#VPNNAME}: status'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.9.{#SNMPINDEX}'
+              key: 'sophos.vpn.status[{#SNMPINDEX}]'
+              history: 7d
+              trigger_prototypes:
+                - uuid: a3a0dd6420b14d71bf5bf1806f48b944
+                  expression: 'min(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}],3m)=0'
+                  name: 'VPN {#VPNNAME}: tunnel inactive for 3 minutes'
+                  priority: HIGH
+                  description: 'MIB enum: 0=inactive, 1=active, 2=partially-active. Confirm actual behavior during post-import test.'
+                - uuid: edfbe42fa4064612aa428b7a4dc3ae81
+                  expression: 'last(/Sophos_XGS3300_SNMPv3_Complete/sophos.vpn.status[{#SNMPINDEX}])=2'
+                  name: 'VPN {#VPNNAME}: tunnel partially active'
+                  priority: WARNING
+                  description: 'VPN status 2 means partially-active.'
+            - uuid: 505c88bf60884dc8ad906ac309f1a712
+              name: 'VPN {#VPNNAME}: type'
+              type: SNMP_AGENT
+              snmp_oid: '1.3.6.1.4.1.2604.5.1.6.1.1.1.1.6.{#SNMPINDEX}'
+              key: 'sophos.vpn.type[{#SNMPINDEX}]'
+              delay: 5m
+              history: 7d
       dashboards:
         - uuid: 0d273b44b7944f71b3108f7b16c566e8
           name: 'Sophos XGS 3300 - Firewall Overview'
