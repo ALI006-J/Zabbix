@@ -39,7 +39,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 2c499be85c514b1590a315b155c7fd36
-          name: 'Port2: IP address'
+          name: 'SIP-TRunk: IP address'
           type: DEPENDENT
           key: sophos.port2.ip
           history: 7d
@@ -58,7 +58,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: c08da5a77fb04283928f273ea77a42fc
-          name: 'Port3: IP address'
+          name: 'Radio-Shanet1-Port3: IP address'
           type: DEPENDENT
           key: sophos.port3.ip
           history: 7d
@@ -77,7 +77,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: d3fb41d003ba4a26b47a37495d2c07a2
-          name: 'Port4: IP address'
+          name: 'Radio-Shanet2-Port4: IP address'
           type: DEPENDENT
           key: sophos.port4.ip
           history: 7d
@@ -96,7 +96,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 1687fcd3cd2446fd94b4439c119c4103
-          name: 'Port5 — Fiber TCI1: IP address'
+          name: 'F1_Port5 — Fiber TCI1: IP address'
           type: DEPENDENT
           key: sophos.port5.ip
           history: 7d
@@ -115,7 +115,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 6b68d47c084440b29703963df5ebb94d
-          name: 'Port6 — Radio TCI1: IP address'
+          name: 'RadioTCI1_Port6 — Radio TCI1: IP address'
           type: DEPENDENT
           key: sophos.port6.ip
           history: 7d
@@ -134,7 +134,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: cefbcb35ff274a639b4460a5f6a9b5f2
-          name: 'Port7 — PPPoE: IP address'
+          name: 'RadioTCI2_Port7 — PPPoE: IP address'
           type: DEPENDENT
           key: sophos.port7.ip
           history: 7d
@@ -153,7 +153,7 @@ zabbix_export:
                     }
                     return ips.length ? ips.join(" / ") : "No IP data";
         - uuid: 264b852eae2649acbd95f1ce65fb9fd9
-          name: 'Port8 — Mikrotik: IP address'
+          name: 'Mikrotik: IP address'
           type: DEPENDENT
           key: sophos.port8.ip
           history: 7d
@@ -327,7 +327,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: d3813003cad84c7484edb30b7cf24e9c
-          name: 'Port2 — Interface name'
+          name: 'SIP-TRunk — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.13
           key: sophos.port2.ifname
@@ -336,7 +336,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 13.'
         - uuid: 3839ad416ed645a7b9c89ac1ffb35e6a
-          name: 'Port2: inbound traffic'
+          name: 'SIP-TRunk: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.13
           key: sophos.port2.in
@@ -349,14 +349,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: da1d8d787312416cacd7ceb9509152d5
-          name: 'Port2: inbound errors'
+          name: 'SIP-TRunk: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.13
           key: sophos.port2.in.errors
           history: 7d
           units: errors
         - uuid: 61935791f2c6403abb2b793c82a43ccd
-          name: 'Port2: outbound traffic'
+          name: 'SIP-TRunk: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.13
           key: sophos.port2.out
@@ -369,14 +369,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 6abe5f8a72d5476b97d8b9b1f9641781
-          name: 'Port2: outbound errors'
+          name: 'SIP-TRunk: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.13
           key: sophos.port2.out.errors
           history: 7d
           units: errors
         - uuid: f79785c06ec94805943713d9d63df8dc
-          name: 'Port2: link speed'
+          name: 'SIP-TRunk: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.13
           key: sophos.port2.speed
@@ -384,7 +384,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: 042c2df2950e476d8956b0d1971a6d30
-          name: 'Port2: operational status'
+          name: 'SIP-TRunk: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.13
           key: sophos.port2.status
@@ -403,7 +403,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: 47329294f9e84150947394f439a052a9
-          name: 'Port3 — Interface name'
+          name: 'Radio-Shanet1-Port3 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.14
           key: sophos.port3.ifname
@@ -412,7 +412,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 14.'
         - uuid: b229b3bea64b464f8c3ef0a965ad7ed3
-          name: 'Port3: inbound traffic'
+          name: 'Radio-Shanet1-Port3: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.14
           key: sophos.port3.in
@@ -425,14 +425,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: edfd7e40e8b34ee88440641197ae1537
-          name: 'Port3: inbound errors'
+          name: 'Radio-Shanet1-Port3: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.14
           key: sophos.port3.in.errors
           history: 7d
           units: errors
         - uuid: 57fa94c7a1db48119975191114ecd1c7
-          name: 'Port3: outbound traffic'
+          name: 'Radio-Shanet1-Port3: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.14
           key: sophos.port3.out
@@ -445,14 +445,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 7278afd525f3432c8478437a02d3f55a
-          name: 'Port3: outbound errors'
+          name: 'Radio-Shanet1-Port3: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.14
           key: sophos.port3.out.errors
           history: 7d
           units: errors
         - uuid: 78b261638e664f728b31d43e4e2e7cc1
-          name: 'Port3: link speed'
+          name: 'Radio-Shanet1-Port3: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.14
           key: sophos.port3.speed
@@ -460,7 +460,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: e878cd15dec644ebade711b35cdc5bf9
-          name: 'Port3: operational status'
+          name: 'Radio-Shanet1-Port3: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.14
           key: sophos.port3.status
@@ -479,7 +479,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: 64c5bbd79f77498f82c6b39a3213dedf
-          name: 'Port4 — Interface name'
+          name: 'Radio-Shanet2-Port4 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.15
           key: sophos.port4.ifname
@@ -488,7 +488,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Actual interface name from IF-MIB ifName for verified ifIndex 15.'
         - uuid: c7a8b6c4b6f64055b0fa4d00a8c12b10
-          name: 'Port4: inbound traffic'
+          name: 'Radio-Shanet2-Port4: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.15
           key: sophos.port4.in
@@ -501,14 +501,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 3c23825cfe3d4545970233b62d169d3c
-          name: 'Port4: inbound errors'
+          name: 'Radio-Shanet2-Port4: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.15
           key: sophos.port4.in.errors
           history: 7d
           units: errors
         - uuid: e659be91275744a2a77e7ca2a497f967
-          name: 'Port4: outbound traffic'
+          name: 'Radio-Shanet2-Port4: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.15
           key: sophos.port4.out
@@ -521,14 +521,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 408486dd01044e86878f2df3e518df55
-          name: 'Port4: outbound errors'
+          name: 'Radio-Shanet2-Port4: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.15
           key: sophos.port4.out.errors
           history: 7d
           units: errors
         - uuid: f71c37bc95f347bd982bc5cbf803d663
-          name: 'Port4: link speed'
+          name: 'Radio-Shanet2-Port4: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.15
           key: sophos.port4.speed
@@ -536,7 +536,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: 2ed23fd7058b4b5b9fa97d29b2fb5e62
-          name: 'Port4: operational status'
+          name: 'Radio-Shanet2-Port4: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.15
           key: sophos.port4.status
@@ -555,7 +555,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: 387f717a627443b284a48420617b5d76
-          name: 'WAN1 — Fiber TCI1 (F1_Port5) — Interface name'
+          name: 'F1_Port5 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.16
           key: sophos.port5.ifname
@@ -564,7 +564,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 16. Sophos API identifies this as F1_Port5; WAN gateway Fiber_TCI1.'
         - uuid: 816dde04898e48f3bc713b4ff115feab
-          name: 'WAN1 Fiber TCI1: inbound traffic'
+          name: 'F1_Port5 Fiber TCI1: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.16
           key: sophos.port5.in
@@ -577,14 +577,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: fcd5afbcfa6846279843b38c9b47dfb5
-          name: 'Port5: inbound errors'
+          name: 'F1_Port5: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.16
           key: sophos.port5.in.errors
           history: 7d
           units: errors
         - uuid: 850078caa41148ca9d476ec4a14a079b
-          name: 'WAN1 Fiber TCI1: outbound traffic'
+          name: 'F1_Port5 Fiber TCI1: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.16
           key: sophos.port5.out
@@ -597,14 +597,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: ece464c6f53d43ad88861fb0d074f2a3
-          name: 'Port5: outbound errors'
+          name: 'F1_Port5: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.16
           key: sophos.port5.out.errors
           history: 7d
           units: errors
         - uuid: eb5a285c644740728eeb09fa52146648
-          name: 'Port5: link speed'
+          name: 'F1_Port5: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.16
           key: sophos.port5.speed
@@ -612,7 +612,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: db4e58aaf802458588013a251d680d45
-          name: 'Port5: operational status'
+          name: 'F1_Port5: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.16
           key: sophos.port5.status
@@ -631,7 +631,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: f84b80d65c164f5daf72c2b9c7b0b9d9
-          name: 'WAN2 — Radio TCI1 (RadioTCI1_Port6) — Interface name'
+          name: 'RadioTCI1_Port6 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.17
           key: sophos.port6.ifname
@@ -640,7 +640,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 17. Sophos API identifies this as RadioTCI1_Port6.'
         - uuid: 4e0c6056364e40168033529a737b3da3
-          name: 'WAN2 Radio TCI1: inbound traffic'
+          name: 'RadioTCI1_Port6 Radio TCI1: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.17
           key: sophos.port6.in
@@ -653,14 +653,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 85b960d4630e46268dddc7cf130e4d37
-          name: 'Port6: inbound errors'
+          name: 'RadioTCI1_Port6: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.17
           key: sophos.port6.in.errors
           history: 7d
           units: errors
         - uuid: 948707bf725546818c528521de62b286
-          name: 'WAN2 Radio TCI1: outbound traffic'
+          name: 'RadioTCI1_Port6 Radio TCI1: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.17
           key: sophos.port6.out
@@ -673,14 +673,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 352ae86b93e94e6eac24b8863c42150a
-          name: 'Port6: outbound errors'
+          name: 'RadioTCI1_Port6: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.17
           key: sophos.port6.out.errors
           history: 7d
           units: errors
         - uuid: 782a8faf3d33456ea2d75a6c39762e38
-          name: 'Port6: link speed'
+          name: 'RadioTCI1_Port6: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.17
           key: sophos.port6.speed
@@ -688,7 +688,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: 2278721d3aa541978eb977fe64e03668
-          name: 'Port6: operational status'
+          name: 'RadioTCI1_Port6: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.17
           key: sophos.port6.status
@@ -707,7 +707,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: ffb034b4c08f4e4c97847a24f50d6aae
-          name: 'WAN3 — Radio TCI2 (RadioTCI2_Port7) — Interface name'
+          name: 'RadioTCI2_Port7 — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.18
           key: sophos.port7.ifname
@@ -716,7 +716,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 18. Sophos API identifies this as RadioTCI2_Port7.'
         - uuid: be0734faf7db49ea8e0fc3e2004703c1
-          name: 'WAN3 Radio TCI2: inbound traffic'
+          name: 'RadioTCI2_Port7 Radio TCI2: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.18
           key: sophos.port7.in
@@ -729,14 +729,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 34247c58e8054607b000772dd0486b3f
-          name: 'Port7: inbound errors'
+          name: 'RadioTCI2_Port7: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.18
           key: sophos.port7.in.errors
           history: 7d
           units: errors
         - uuid: e37d5cbf09574547b3dad75122093bdb
-          name: 'WAN3 Radio TCI2: outbound traffic'
+          name: 'RadioTCI2_Port7 Radio TCI2: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.18
           key: sophos.port7.out
@@ -749,14 +749,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 4c1d5f96382d4e05a9be3bc7fe166f00
-          name: 'Port7: outbound errors'
+          name: 'RadioTCI2_Port7: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.18
           key: sophos.port7.out.errors
           history: 7d
           units: errors
         - uuid: 2e24355fc264493fb9a1d9761fe48c0d
-          name: 'Port7: link speed'
+          name: 'RadioTCI2_Port7: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.18
           key: sophos.port7.speed
@@ -764,7 +764,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: d14c0722d9a74d1fa68ce78cc49aec60
-          name: 'Port7: operational status'
+          name: 'RadioTCI2_Port7: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.18
           key: sophos.port7.status
@@ -783,7 +783,7 @@ zabbix_export:
               priority: HIGH
               description: 'Escalation threshold for persistent link-down state.'
         - uuid: b5206f92f6184dd68375d6ba2832ee85
-          name: 'WAN4 — Mikrotik — Interface name'
+          name: 'Mikrotik — Interface name'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.1.19
           key: sophos.port8.ifname
@@ -792,7 +792,7 @@ zabbix_export:
           value_type: CHAR
           description: 'Live interface name from IF-MIB ifName for ifIndex 19. Sophos API identifies this as Mikrotik.'
         - uuid: 55b3ea4d35fc4f38babf005c035b50e7
-          name: 'WAN4 Mikrotik: inbound traffic'
+          name: 'Mikrotik Mikrotik: inbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.6.19
           key: sophos.port8.in
@@ -805,14 +805,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: 8c40a209aa2a40ef97d1964f23aba3e2
-          name: 'Port8: inbound errors'
+          name: 'Mikrotik: inbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.14.19
           key: sophos.port8.in.errors
           history: 7d
           units: errors
         - uuid: f8570b5a30954052a2536c036dced90e
-          name: 'WAN4 Mikrotik: outbound traffic'
+          name: 'Mikrotik Mikrotik: outbound traffic'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.10.19
           key: sophos.port8.out
@@ -825,14 +825,14 @@ zabbix_export:
               parameters:
                 - '8'
         - uuid: e36fe1fdd658408b890a4d3613247714
-          name: 'Port8: outbound errors'
+          name: 'Mikrotik: outbound errors'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.20.19
           key: sophos.port8.out.errors
           history: 7d
           units: errors
         - uuid: 5508971eda1b4e6ab00d4a2ce0930519
-          name: 'Port8: link speed'
+          name: 'Mikrotik: link speed'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.31.1.1.1.15.19
           key: sophos.port8.speed
@@ -840,7 +840,7 @@ zabbix_export:
           value_type: UNSIGNED
           units: Mbps
         - uuid: 54acfb0486704b86b98c2bebd26b1d96
-          name: 'Port8: operational status'
+          name: 'Mikrotik: operational status'
           type: SNMP_AGENT
           snmp_oid: 1.3.6.1.2.1.2.2.1.8.19
           key: sophos.port8.status
@@ -1010,7 +1010,7 @@ zabbix_export:
                       name: reference
                       value: P1T
                 - type: graph
-                  name: 'Port3 traffic'
+                  name: 'Radio-Shanet1-Port3 traffic'
                   'y': '11'
                   width: '36'
                   height: '6'
@@ -1019,12 +1019,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port3 traffic'
+                        name: 'Radio-Shanet1-Port3 traffic'
                     - type: STRING
                       name: reference
                       value: P3T
                 - type: graph
-                  name: 'WAN1 Fiber TCI1 traffic'
+                  name: 'F1_Port5 Fiber TCI1 traffic'
                   'y': '17'
                   width: '36'
                   height: '6'
@@ -1033,12 +1033,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN1 Fiber TCI1 traffic'
+                        name: 'F1_Port5 Fiber TCI1 traffic'
                     - type: STRING
                       name: reference
                       value: P5T
                 - type: graph
-                  name: 'WAN3 Radio TCI2 traffic'
+                  name: 'RadioTCI2_Port7 Radio TCI2 traffic'
                   'y': '23'
                   width: '36'
                   height: '6'
@@ -1047,7 +1047,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN3 Radio TCI2 traffic'
+                        name: 'RadioTCI2_Port7 Radio TCI2 traffic'
                     - type: STRING
                       name: reference
                       value: P7T
@@ -1066,7 +1066,7 @@ zabbix_export:
                       name: reference
                       value: SYSR
                 - type: graph
-                  name: 'Port2 traffic'
+                  name: 'SIP-TRunk traffic'
                   x: '36'
                   'y': '5'
                   width: '36'
@@ -1076,12 +1076,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port2 traffic'
+                        name: 'SIP-TRunk traffic'
                     - type: STRING
                       name: reference
                       value: P2T
                 - type: graph
-                  name: 'Port4 traffic'
+                  name: 'Radio-Shanet2-Port4 traffic'
                   x: '36'
                   'y': '11'
                   width: '36'
@@ -1091,12 +1091,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port4 traffic'
+                        name: 'Radio-Shanet2-Port4 traffic'
                     - type: STRING
                       name: reference
                       value: P4T
                 - type: graph
-                  name: 'WAN2 Radio TCI1 traffic'
+                  name: 'RadioTCI1_Port6 Radio TCI1 traffic'
                   x: '36'
                   'y': '17'
                   width: '36'
@@ -1106,12 +1106,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN2 Radio TCI1 traffic'
+                        name: 'RadioTCI1_Port6 Radio TCI1 traffic'
                     - type: STRING
                       name: reference
                       value: P6T
                 - type: graph
-                  name: 'WAN4 Mikrotik traffic'
+                  name: 'Mikrotik Mikrotik traffic'
                   x: '36'
                   'y': '23'
                   width: '36'
@@ -1121,7 +1121,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN4 Mikrotik traffic'
+                        name: 'Mikrotik Mikrotik traffic'
                     - type: STRING
                       name: reference
                       value: P8T
@@ -1159,7 +1159,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port2 — Interface'
+                  name: 'SIP-TRunk — Interface'
                   'y': '5'
                   width: '10'
                   height: '5'
@@ -1191,7 +1191,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port3 — Interface'
+                  name: 'Radio-Shanet1-Port3 — Interface'
                   'y': '10'
                   width: '10'
                   height: '5'
@@ -1223,7 +1223,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port4 — Interface'
+                  name: 'Radio-Shanet2-Port4 — Interface'
                   'y': '15'
                   width: '10'
                   height: '5'
@@ -1255,7 +1255,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'WAN1 — Fiber TCI1 (F1_Port5)'
+                  name: 'F1_Port5'
                   'y': '20'
                   width: '10'
                   height: '5'
@@ -1287,7 +1287,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'WAN2 — Radio TCI1 (RadioTCI1_Port6)'
+                  name: 'RadioTCI1_Port6'
                   'y': '25'
                   width: '10'
                   height: '5'
@@ -1319,7 +1319,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'WAN3 — Radio TCI2 (RadioTCI2_Port7)'
+                  name: 'RadioTCI2_Port7'
                   'y': '30'
                   width: '10'
                   height: '5'
@@ -1351,7 +1351,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'WAN4 — Mikrotik'
+                  name: 'Mikrotik'
                   'y': '35'
                   width: '10'
                   height: '5'
@@ -1423,7 +1423,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port2 — IP address'
+                  name: 'SIP-TRunk — IP address'
                   x: '10'
                   'y': '5'
                   width: '10'
@@ -1456,7 +1456,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port3 — IP address'
+                  name: 'Radio-Shanet1-Port3 — IP address'
                   x: '10'
                   'y': '10'
                   width: '10'
@@ -1489,7 +1489,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port4 — IP address'
+                  name: 'Radio-Shanet2-Port4 — IP address'
                   x: '10'
                   'y': '15'
                   width: '10'
@@ -1522,7 +1522,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port5 — IP address'
+                  name: 'F1_Port5 — IP address'
                   x: '10'
                   'y': '20'
                   width: '10'
@@ -1555,7 +1555,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port6 — IP address'
+                  name: 'RadioTCI1_Port6 — IP address'
                   x: '10'
                   'y': '25'
                   width: '10'
@@ -1588,7 +1588,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port7 — IP address'
+                  name: 'RadioTCI2_Port7 — IP address'
                   x: '10'
                   'y': '30'
                   width: '10'
@@ -1621,7 +1621,7 @@ zabbix_export:
                       name: value_size
                       value: '20'
                 - type: item
-                  name: 'Port8 — IP address'
+                  name: 'Mikrotik — IP address'
                   x: '10'
                   'y': '35'
                   width: '10'
@@ -1970,7 +1970,7 @@ zabbix_export:
                       name: reference
                       value: P1LIVE
                 - type: graph
-                  name: 'Port2 — Live traffic'
+                  name: 'SIP-TRunk — Live traffic'
                   x: '40'
                   'y': '5'
                   width: '32'
@@ -1980,12 +1980,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port2 traffic'
+                        name: 'SIP-TRunk traffic'
                     - type: STRING
                       name: reference
                       value: P2LIVE
                 - type: graph
-                  name: 'Port3 — Live traffic'
+                  name: 'Radio-Shanet1-Port3 — Live traffic'
                   x: '40'
                   'y': '10'
                   width: '32'
@@ -1995,12 +1995,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port3 traffic'
+                        name: 'Radio-Shanet1-Port3 traffic'
                     - type: STRING
                       name: reference
                       value: P3LIVE
                 - type: graph
-                  name: 'Port4 — Live traffic'
+                  name: 'Radio-Shanet2-Port4 — Live traffic'
                   x: '40'
                   'y': '15'
                   width: '32'
@@ -2010,12 +2010,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'Port4 traffic'
+                        name: 'Radio-Shanet2-Port4 traffic'
                     - type: STRING
                       name: reference
                       value: P4LIVE
                 - type: graph
-                  name: 'Port5 — Live traffic'
+                  name: 'F1_Port5 — Live traffic'
                   x: '40'
                   'y': '20'
                   width: '32'
@@ -2025,12 +2025,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN1 Fiber TCI1 traffic'
+                        name: 'F1_Port5 Fiber TCI1 traffic'
                     - type: STRING
                       name: reference
                       value: P5LIVE
                 - type: graph
-                  name: 'Port6 — Live traffic'
+                  name: 'RadioTCI1_Port6 — Live traffic'
                   x: '40'
                   'y': '25'
                   width: '32'
@@ -2040,12 +2040,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN2 Radio TCI1 traffic'
+                        name: 'RadioTCI1_Port6 Radio TCI1 traffic'
                     - type: STRING
                       name: reference
                       value: P6LIVE
                 - type: graph
-                  name: 'Port7 — Live traffic'
+                  name: 'RadioTCI2_Port7 — Live traffic'
                   x: '40'
                   'y': '30'
                   width: '32'
@@ -2055,12 +2055,12 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN3 Radio TCI2 traffic'
+                        name: 'RadioTCI2_Port7 Radio TCI2 traffic'
                     - type: STRING
                       name: reference
                       value: P7LIVE
                 - type: graph
-                  name: 'Port8 — Live traffic'
+                  name: 'Mikrotik — Live traffic'
                   x: '40'
                   'y': '35'
                   width: '32'
@@ -2070,7 +2070,7 @@ zabbix_export:
                       name: graphid.0
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
-                        name: 'WAN4 Mikrotik traffic'
+                        name: 'Mikrotik Mikrotik traffic'
                     - type: STRING
                       name: reference
                       value: P8LIVE
@@ -2176,7 +2176,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port1.out
     - uuid: fe7bd9c0347a41b7a81a07f782224057
-      name: 'Port2 traffic'
+      name: 'SIP-TRunk traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2191,7 +2191,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port2.out
     - uuid: f82aae25fd8d4954ad5b31326de1d9f2
-      name: 'Port3 traffic'
+      name: 'Radio-Shanet1-Port3 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2206,7 +2206,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port3.out
     - uuid: f7b776deda094c8e91ddaa6877fa45a4
-      name: 'Port4 traffic'
+      name: 'Radio-Shanet2-Port4 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2221,7 +2221,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port4.out
     - uuid: 282b514ff6ea4a6b954531f65f18f79a
-      name: 'WAN1 Fiber TCI1 traffic'
+      name: 'F1_Port5 Fiber TCI1 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2236,7 +2236,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port5.out
     - uuid: b179c796ae9d4592b18ce3bfb2430064
-      name: 'WAN2 Radio TCI1 traffic'
+      name: 'RadioTCI1_Port6 Radio TCI1 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2251,7 +2251,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port6.out
     - uuid: d795c0a32f8a459e82c47da9beefc194
-      name: 'WAN3 Radio TCI2 traffic'
+      name: 'RadioTCI2_Port7 Radio TCI2 traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
@@ -2266,7 +2266,7 @@ zabbix_export:
             host: Sophos_XGS3300_SNMPv3_Complete
             key: sophos.port7.out
     - uuid: 1177c90b30ec4e65bc371d81f8ab02ad
-      name: 'WAN4 Mikrotik traffic'
+      name: 'Mikrotik Mikrotik traffic'
       show_work_period: 'NO'
       graph_items:
         - drawtype: BOLD_LINE
