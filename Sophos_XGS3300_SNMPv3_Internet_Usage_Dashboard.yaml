@@ -896,7 +896,7 @@ zabbix_export:
           units: users
         - uuid: 2a10000100004000a000000000000001
           name: 'Internet usage — Office upload'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.office.upload.bytes
           history: 90d
           trends: 365d
@@ -905,7 +905,7 @@ zabbix_export:
           description: 'Daily cumulative upload bytes for QOM_INT_Office. Supplied by the Sophos usage collector.'
         - uuid: 2a10000100004000a000000000000002
           name: 'Internet usage — Office download'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.office.download.bytes
           history: 90d
           trends: 365d
@@ -914,7 +914,7 @@ zabbix_export:
           description: 'Daily cumulative download bytes for QOM_INT_Office. Missing download values must not be sent as zero.'
         - uuid: 2a10000100004000a000000000000003
           name: 'Internet usage — Chat upload'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.chat.upload.bytes
           history: 90d
           trends: 365d
@@ -923,7 +923,7 @@ zabbix_export:
           description: 'Daily cumulative upload bytes for QOM_INT_Chat.'
         - uuid: 2a10000100004000a000000000000004
           name: 'Internet usage — Chat download'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.chat.download.bytes
           history: 90d
           trends: 365d
@@ -932,7 +932,7 @@ zabbix_export:
           description: 'Daily cumulative download bytes for QOM_INT_Chat. Missing download values must not be sent as zero.'
         - uuid: 2a10000100004000a000000000000005
           name: 'Internet usage — Wi-Fi upload'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.wifi.upload.bytes
           history: 90d
           trends: 365d
@@ -941,7 +941,7 @@ zabbix_export:
           description: 'Aggregated upload bytes for Wifi-Pak1 through Wifi-Pak4. No identity is inferred from MAC addresses.'
         - uuid: 2a10000100004000a000000000000006
           name: 'Internet usage — Wi-Fi download'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.wifi.download.bytes
           history: 90d
           trends: 365d
@@ -950,35 +950,35 @@ zabbix_export:
           description: 'Aggregated Wi-Fi download bytes. Incomplete sessions must be tracked separately, not converted to valid zero usage.'
         - uuid: 2a10000100004000a000000000000007
           name: 'Internet usage — Office top users JSON'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.office.top_users
           history: 7d
           value_type: TEXT
           description: 'JSON ranking payload with username, source IP, upload_bytes and download_bytes for QOM_INT_Office.'
         - uuid: 2a10000100004000a000000000000008
           name: 'Internet usage — Chat top users JSON'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.chat.top_users
           history: 7d
           value_type: TEXT
           description: 'JSON ranking payload with username, source IP, upload_bytes and download_bytes for QOM_INT_Chat.'
         - uuid: 2a10000100004000a000000000000009
           name: 'Internet usage — Wi-Fi rules JSON'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.usage.wifi.rules
           history: 7d
           value_type: TEXT
           description: 'JSON breakdown for Wifi-Pak1 through Wifi-Pak4 including upload, download and incomplete session counts.'
         - uuid: 2a10000100004000a00000000000000a
           name: 'Internet usage collector — status'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.collector.status
           history: 30d
           value_type: UNSIGNED
           description: '1=healthy, 0=not healthy. Updated by collector heartbeat.'
         - uuid: 2a10000100004000a00000000000000b
           name: 'Internet usage collector — last successful update'
-          type: ZABBIX_TRAPPER
+          type: TRAP
           key: sophos.collector.last_success
           history: 30d
           value_type: UNSIGNED
