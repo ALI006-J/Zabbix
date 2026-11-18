@@ -306,11 +306,7 @@ zabbix_export:
           key: sophos.port1.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: 69a202b5f6884b75b591257f9500bf37
           name: 'Port1: operational status'
           type: SNMP_AGENT
@@ -386,11 +382,7 @@ zabbix_export:
           key: sophos.port2.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: 042c2df2950e476d8956b0d1971a6d30
           name: 'SIP-TRunk: operational status'
           type: SNMP_AGENT
@@ -466,11 +458,7 @@ zabbix_export:
           key: sophos.port3.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: e878cd15dec644ebade711b35cdc5bf9
           name: 'Radio-Shanet1-Port3: operational status'
           type: SNMP_AGENT
@@ -546,11 +534,7 @@ zabbix_export:
           key: sophos.port4.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: 2ed23fd7058b4b5b9fa97d29b2fb5e62
           name: 'Radio-Shanet2-Port4: operational status'
           type: SNMP_AGENT
@@ -626,11 +610,7 @@ zabbix_export:
           key: sophos.port5.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: db4e58aaf802458588013a251d680d45
           name: 'F1_Port5: operational status'
           type: SNMP_AGENT
@@ -706,11 +686,7 @@ zabbix_export:
           key: sophos.port6.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: 2278721d3aa541978eb977fe64e03668
           name: 'RadioTCI1_Port6: operational status'
           type: SNMP_AGENT
@@ -786,11 +762,7 @@ zabbix_export:
           key: sophos.port7.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: d14c0722d9a74d1fa68ce78cc49aec60
           name: 'RadioTCI2_Port7: operational status'
           type: SNMP_AGENT
@@ -866,11 +838,7 @@ zabbix_export:
           key: sophos.port8.speed
           history: 7d
           value_type: UNSIGNED
-          preprocessing:
-            - type: MULTIPLIER
-              parameters:
-                - '1000000'
-          units: bps
+          units: Mbps
         - uuid: 54acfb0486704b86b98c2bebd26b1d96
           name: 'Mikrotik: operational status'
           type: SNMP_AGENT
