@@ -984,6 +984,28 @@ zabbix_export:
           value_type: UNSIGNED
           units: unixtime
           description: 'Unix timestamp of the last successful collector run.'
+        - uuid: 2a10000100004000a00000000000000c
+          name: 'Internet usage — Office total'
+          type: CALCULATED
+          key: sophos.usage.office.total.bytes
+          delay: 1m
+          history: 90d
+          trends: 365d
+          value_type: UNSIGNED
+          units: B
+          params: 'last(//sophos.usage.office.upload.bytes)+last(//sophos.usage.office.download.bytes)'
+          description: 'Office total traffic calculated from upload plus download. Calculation remains unsupported until both source values exist; missing data is not treated as zero.'
+        - uuid: 2a10000100004000a00000000000000d
+          name: 'Internet usage — Chat total'
+          type: CALCULATED
+          key: sophos.usage.chat.total.bytes
+          delay: 1m
+          history: 90d
+          trends: 365d
+          value_type: UNSIGNED
+          units: B
+          params: 'last(//sophos.usage.chat.upload.bytes)+last(//sophos.usage.chat.download.bytes)'
+          description: 'Chat total traffic calculated from upload plus download. Calculation remains unsupported until both source values exist; missing data is not treated as zero.'
       discovery_rules:
         - uuid: da29b22942ba4c6ba2bb7821068dec67
           name: 'Sophos VPN tunnel discovery'
@@ -2765,6 +2787,47 @@ zabbix_export:
                       value:
                         host: Sophos_XGS3300_SNMPv3_Complete
                         key: sophos.usage.chat.top_users
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                - type: item
+                  name: 'Office — Total traffic (bytes)'
+                  'y': '26'
+                  width: '36'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'QOM_INT_Office — Upload + Download; requires both source values'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.usage.office.total.bytes
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                - type: item
+                  name: 'Chat — Total traffic (bytes)'
+                  x: '36'
+                  'y': '26'
+                  width: '36'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: description
+                      value: 'QOM_INT_Chat — Upload + Download; requires both source values'
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: Sophos_XGS3300_SNMPv3_Complete
+                        key: sophos.usage.chat.total.bytes
                     - type: INTEGER
                       name: show.0
                       value: '1'
