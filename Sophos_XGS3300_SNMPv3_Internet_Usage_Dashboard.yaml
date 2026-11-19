@@ -993,8 +993,8 @@ zabbix_export:
           trends: 365d
           value_type: UNSIGNED
           units: B
-          params: 'last(//sophos.usage.office.upload.bytes)+last(//sophos.usage.office.download.bytes)'
-          description: 'Office total traffic calculated from upload plus download. Calculation remains unsupported until both source values exist; missing data is not treated as zero.'
+          params: 'last(//sophos.usage.office.upload.bytes)'
+          description: 'Office upload total only. Download is incomplete and is intentionally excluded.'
         - uuid: 2a10000100004000a00000000000000d
           name: 'Internet usage — Chat total'
           type: CALCULATED
@@ -1004,8 +1004,8 @@ zabbix_export:
           trends: 365d
           value_type: UNSIGNED
           units: B
-          params: 'last(//sophos.usage.chat.upload.bytes)+last(//sophos.usage.chat.download.bytes)'
-          description: 'Chat total traffic calculated from upload plus download. Calculation remains unsupported until both source values exist; missing data is not treated as zero.'
+          params: 'last(//sophos.usage.chat.upload.bytes)'
+          description: 'Chat upload total only. Download is incomplete and is intentionally excluded.'
       discovery_rules:
         - uuid: da29b22942ba4c6ba2bb7821068dec67
           name: 'Sophos VPN tunnel discovery'
@@ -2752,47 +2752,18 @@ zabbix_export:
                     - type: INTEGER
                       name: show.1
                       value: '2'
-                - type: item
-                  name: 'Office — Top users JSON (integration payload)'
+                - type: url
+                  name: 'Users & Wi-Fi — Live Tables'
                   'y': '10'
-                  width: '36'
-                  height: '8'
+                  width: '72'
+                  height: '16'
                   fields:
                     - type: STRING
-                      name: description
-                      value: 'Username / source IP / upload / download'
-                    - type: ITEM
-                      name: itemid.0
-                      value:
-                        host: Sophos_XGS3300_SNMPv3_Complete
-                        key: sophos.usage.office.top_users
+                      name: url
+                      value: 'http://192.168.6.26:8090/'
                     - type: INTEGER
-                      name: show.0
-                      value: '1'
-                    - type: INTEGER
-                      name: show.1
-                      value: '2'
-                - type: item
-                  name: 'Chat — Top users JSON (integration payload)'
-                  x: '36'
-                  'y': '10'
-                  width: '36'
-                  height: '8'
-                  fields:
-                    - type: STRING
-                      name: description
-                      value: 'Username / source IP / upload / download'
-                    - type: ITEM
-                      name: itemid.0
-                      value:
-                        host: Sophos_XGS3300_SNMPv3_Complete
-                        key: sophos.usage.chat.top_users
-                    - type: INTEGER
-                      name: show.0
-                      value: '1'
-                    - type: INTEGER
-                      name: show.1
-                      value: '2'
+                      name: rf_rate
+                      value: '60'
                 - type: item
                   name: 'Office — Total traffic (bytes)'
                   'y': '26'
@@ -2801,7 +2772,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'QOM_INT_Office — Upload + Download; requires both source values'
+                      value: 'QOM_INT_Office — Upload only; Download is incomplete and excluded'
                     - type: ITEM
                       name: itemid.0
                       value:
@@ -2822,7 +2793,7 @@ zabbix_export:
                   fields:
                     - type: STRING
                       name: description
-                      value: 'QOM_INT_Chat — Upload + Download; requires both source values'
+                      value: 'QOM_INT_Chat — Upload only; Download is incomplete and excluded'
                     - type: ITEM
                       name: itemid.0
                       value:
